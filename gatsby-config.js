@@ -3,6 +3,7 @@ module.exports = {
     title: 'Gatsby + Node.js (TypeScript) API',
   },
   plugins: [
+    `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-plugin-manifest`,

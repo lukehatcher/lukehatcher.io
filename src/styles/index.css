@@ -1,5 +1,25 @@
-main {
-  align-content: center;
+* {
+  /* CSS reset */
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+html {
+  background-color: #18191a;
+}
+
+/* body {
+  overflow: hidden;
+} */
+/* main {
+  color: #f5f6f7;
+  display: flex;
+  flex-direction: column;
   box-sizing: border-box;
   display: grid;
   font-family: 'SF Pro Text', 'SF Pro Icons', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
@@ -10,7 +30,8 @@ main {
   min-height: 100vh;
   padding: 72px 0;
   text-align: center;
-}
+  border: 1px solid red;
+} */
 h1 {
   font-size: 45px;
 }
@@ -20,7 +41,7 @@ h2 {
 p {
   font-size: 16px;
 }
-a {
+/* a {
   border-bottom: 1px solid white;
   color: #0076ff;
   cursor: pointer;
@@ -40,4 +61,4 @@ pre {
 code:before,
 code:after {
   content: '\`';
-}
+} */
