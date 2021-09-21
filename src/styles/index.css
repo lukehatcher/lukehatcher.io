@@ -20,6 +20,12 @@
   }
 }
 
+@media only screen and (device-width: 844px) and (device-height: 390px) and (-webkit-device-pixel-ratio: 3) {
+  p {
+    font-size: 14px;
+  }
+}
+
 a:visited,
 a:focus,
 a:active {
