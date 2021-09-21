@@ -27,3 +27,7 @@ a {
 a:hover {
   transform: scale(1.15);
 }
+
+p {
+  font-size: calc(13px + 0.5vmax);
+}
