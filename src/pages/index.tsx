@@ -67,7 +67,8 @@ const AboutBlurbContainer = styled.div`
 
 /* font-size: ${(props) => props.fontSize}px; */
 const BlurbContent = styled.p`
-  font-size: 16;
+  /* font-size: 16px; */
+  font-size: calc(0.5vw + 0.5vh + 0.5vmin);
   line-height: 1.65;
   padding-left: 15px;
   padding-right: 15px;

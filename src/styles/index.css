@@ -15,14 +15,6 @@ a:active {
   color: #f5f6f7;
 }
 
-/* === end of CSS reset === */
-
-@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
-  p {
-    font-size: 14px;
-  }
-}
-
 html {
   background-color: #18191a;
 }
