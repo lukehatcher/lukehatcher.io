@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import '../styles/index.css';
 import styled from 'styled-components';
 import { SiLinkedin } from '@react-icons/all-files/si/SiLinkedin';
 import { SiGithub } from '@react-icons/all-files/si/SiGithub';
 import { SiGmail } from '@react-icons/all-files/si/SiGmail';
 import { FaFileAlt } from '@react-icons/all-files/fa/FaFileAlt';
+import '@fontsource/inter';
+import '../styles/index.css';
 
 enum directions {
   ROW = 'row',
@@ -22,7 +23,7 @@ const PageContainer = styled.div`
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
-  font-family: SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
+  font-family: Inter, SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
   color: #f5f6f7;
   /* justify-content: center; */
   align-items: center;
