@@ -70,6 +70,10 @@ const BlurbContent = styled.p`
   padding-right: 15px;
 `;
 
+const TBLink = styled.a`
+  color: #f5f6f7;
+`;
+
 const RootIconContainer = styled.div<IconContainerProps>`
   display: flex;
   flex-direction: ${(props) => props.flexDirection};
@@ -165,10 +169,10 @@ const Index = () => {
             2020 with a B.S. in chemistry and a minor in math. I fell in love with programming while working in a
             computational chemistry research group at UW. I am passionate about building products that simplify peoples
             lives. In my free time I enjoy working on{' '}
-            <a href="https://github.com/lukehatcher/thoughtBubble-monorepo">thoughtBubble</a>, a productivity ecosystem
-            for developers where they can sync their thoughts between their mobile devices and their code editors. My
-            current programming interests revolve around TypeScript, C# and the occasional Python. Feel free to get in
-            touch!
+            <TBLink href="https://github.com/lukehatcher/thoughtBubble-monorepo">thoughtBubble</TBLink>, a productivity
+            ecosystem for developers where they can sync their thoughts between their mobile devices and their code
+            editors. My current programming interests revolve around TypeScript, C# and the occasional Python. Feel free
+            to get in touch!
           </BlurbContent>
         </AboutBlurbContainer>
         <RootIconContainer flexDirection={rootFlexDirection}>
@@ -214,7 +218,5 @@ const Index = () => {
     </PageContainer>
   );
 };
-
-// link to thoughtbubbe in paragraph
 
 export default Index;
