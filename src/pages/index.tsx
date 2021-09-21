@@ -16,10 +16,6 @@ interface IconContainerProps {
   flexDirection: string;
 }
 
-interface BlurbProps {
-  fontSize: number;
-}
-
 const PageContainer = styled.div`
   min-height: 100vh; // ========
   position: relative; // ========
@@ -60,7 +56,7 @@ const ContentContainer = styled.div`
 `;
 
 const AboutBlurbContainer = styled.div`
-  margin-bottom: 50px; // ***********
+  margin-bottom: 50px; // xxxxxx
   max-width: 680px;
   padding: 30px;
   /* border: 1px solid pink; */
@@ -77,6 +73,7 @@ const RootIconContainer = styled.div<IconContainerProps>`
   display: flex;
   flex-direction: ${(props) => props.flexDirection};
   /* border: 1px solid red; */
+  margin-bottom: 50px; // xxxxxx
 `;
 
 const IconContainer = styled.div`
@@ -106,8 +103,7 @@ const FooterText = styled.p`
 
 const Index = () => {
   const [rootFlexDirection, setRootFlexDirection] = useState<directions>(directions.ROW);
-  // const [blurbFont, setBlurbFont] = useState<number>(16);
-  // const [headerText, setHeaderText] = useState<string>('');
+  const [headerText, setHeaderText] = useState<string>('');
 
   const throttle = (fxn: (...args: any[]) => void, timeout: number = 200) => {
     let wait = false;
@@ -127,18 +123,27 @@ const Index = () => {
     if (window.innerWidth < 960) {
       // 960, 680
       setRootFlexDirection(directions.COLUMN);
-      // if (window.innerWidth < 680) {
-      //   setBlurbFont(14);
-      // }
     } else {
       setRootFlexDirection(directions.ROW);
-      // setBlurbFont(16);
     }
   };
 
   useEffect(() => {
     handleResize();
     window.addEventListener('resize', throttle(handleResize));
+  }, []);
+
+  useEffect(() => {
+    let i = 1;
+    const name = 'Luke Hatcher';
+    const typeWriter = () => {
+      if (i === name.length + 1) {
+        clearInterval(intervalId);
+      }
+      setHeaderText(name.slice(0, i));
+      i++;
+    };
+    const intervalId = setInterval(typeWriter, 45);
   }, []);
 
   return (
@@ -148,7 +153,7 @@ const Index = () => {
         <title>Luke Hatcher</title>
       </Helmet>
       <HeaderContainer>
-        <HeaderText>Luke Hatcher</HeaderText>
+        <HeaderText>{headerText}</HeaderText>
       </HeaderContainer>
       <ContentContainer>
         <AboutBlurbContainer>
@@ -158,18 +163,27 @@ const Index = () => {
             &nbsp;&nbsp;&nbsp;&nbsp; I'm Luke, a software engineer. I graduated from the University of Washington in
             2020 with a B.S. in chemistry and a minor in math. I fell in love with programming while working in a
             computational chemistry research group at UW. I am passionate about building products that simplify peoples
-            lives. In my free time I enjoy working on thoughtBubble, a productivity ecosystem for developers where they
-            can sync their thoughts between their mobile devices and their code editors. Check it out below! My current
-            programming interests revolve around TypeScript, C# and the occasional Python. Feel free to get in touch!
+            lives. In my free time I enjoy working on{' '}
+            <a href="https://github.com/lukehatcher/thoughtBubble-monorepo">thoughtBubble</a>, a productivity ecosystem
+            for developers where they can sync their thoughts between their mobile devices and their code editors. My
+            current programming interests revolve around TypeScript, C# and the occasional Python. Feel free to get in
+            touch!
           </BlurbContent>
         </AboutBlurbContainer>
         <RootIconContainer flexDirection={rootFlexDirection}>
           <IconContainer>
-            <a href="https://github.com/lukehatcher" rel="noreferrer" target="_blank" title="GitHub Profile">
+            <a
+              href="https://github.com/lukehatcher"
+              className="icon"
+              rel="noreferrer"
+              target="_blank"
+              title="GitHub Profile"
+            >
               <SiGithub size="85" color="#f5f6f7" />
             </a>
             <a
               href="https://www.linkedin.com/in/lukehatcher98/"
+              className="icon"
               rel="noreferrer"
               target="_blank"
               title="LinkIn Profile"
@@ -178,11 +192,12 @@ const Index = () => {
             </a>
           </IconContainer>
           <IconContainer>
-            <a href="mailto:lukehatcher98@gmail.com" rel="noreferrer" target="_blank" title="Gmail">
+            <a href="mailto:lukehatcher98@gmail.com" className="icon" rel="noreferrer" target="_blank" title="Gmail">
               <SiGmail size="85" color="#f5f6f7" />
             </a>
             <a
               href="https://luke-resume.s3-us-west-2.amazonaws.com/lukeHatcher-resume.pdf"
+              className="icon"
               target="_blank"
               title="Resume"
             >

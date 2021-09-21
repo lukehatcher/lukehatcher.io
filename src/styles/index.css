@@ -6,6 +6,7 @@
   font-size: 100%;
   vertical-align: baseline;
   background: transparent;
+  /* text-decoration: none; */
 }
 
 html {
@@ -25,12 +26,12 @@ html {
   background-color: #18191a;
 }
 
-a {
+.icon {
   padding: 50px;
   transition: all 0.2s ease-in-out;
 }
 
-a:hover {
+.icon:hover {
   transform: scale(1.15);
 }
 
