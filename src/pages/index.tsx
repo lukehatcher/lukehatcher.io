@@ -55,14 +55,14 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px solid green;
+  /* border: 1px solid green; */
 `;
 
 const AboutBlurbContainer = styled.div`
   margin-bottom: 75px;
   max-width: 680px;
   padding: 30px;
-  border: 1px solid red;
+  /* border: 1px solid red; */
 `;
 
 const BlurbContent = styled.p<BlurbProps>`
@@ -129,14 +129,10 @@ const Index = () => {
   };
 
   const handleResize = () => {
-    const width = window.innerWidth;
-    if (width < 960) {
+    if (window.innerWidth < 960) {
       // 960, 680
       setRootFlexDirection(directions.COLUMN);
-      if (width < 400) {
-        //  console.log(width);
-        setBlurbFont(15);
-      }
+      setBlurbFont(15);
     } else {
       setRootFlexDirection(directions.ROW);
       setBlurbFont(16);
