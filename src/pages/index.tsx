@@ -27,33 +27,28 @@ const PageContainer = styled.div`
   color: #f5f6f7;
   /* justify-content: center; */
   align-items: center;
-`;
-
-const HeaderContainer = styled.div`
-  position: absolute; // ========
-  top: 0;
-  height: 80px; // ========
-  width: 100vw;
-  display: flex;
-  background-color: rebeccapurple;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-`;
-
-const HeaderText = styled.h1`
-  font-size: 42.5px;
+  background-image: linear-gradient(
+    to right bottom,
+    #83111a,
+    #730f34,
+    #5a1c42,
+    #3d2344,
+    #262439,
+    #22253c,
+    #1d2640,
+    #162743,
+    #182b5c,
+    #2a2c73,
+    #482685,
+    #6c0f90
+  );
 `;
 
 const ContentContainer = styled.div`
   padding-top: 80px;
-  margin-top: 80px;
   margin-bottom: 80px; // footer height
   display: flex;
   flex-direction: column;
-  /* align-items: center; */
-  /* justify-content: space-evenly; */
-  /* border: 1px solid green; */
 `;
 
 const AboutBlurbContainer = styled.div`
@@ -95,7 +90,7 @@ const FooterContainer = styled.div`
   bottom: 0;
   width: 100vw;
   height: 80px; // footer height
-  background-color: #1c1e21;
+  /* background-color: #1c1e21; */
   text-align: center;
   align-items: center;
   justify-content: center;
@@ -108,7 +103,7 @@ const FooterText = styled.p`
 
 const Index = () => {
   const [rootFlexDirection, setRootFlexDirection] = useState<directions>(directions.ROW);
-  const [headerText, setHeaderText] = useState<string>('');
+  const [_headerText, setHeaderText] = useState<string>('');
 
   const throttle = (fxn: (...args: any[]) => void, timeout: number = 200) => {
     let wait = false;
@@ -157,18 +152,15 @@ const Index = () => {
         <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Luke Hatcher</title>
       </Helmet>
-      <HeaderContainer>
-        <HeaderText>{headerText}</HeaderText>
-      </HeaderContainer>
       <ContentContainer>
         <AboutBlurbContainer>
           <BlurbContent>Hi,</BlurbContent>
           <br />
           <BlurbContent>
-            &nbsp;&nbsp;&nbsp;&nbsp; I'm Luke, a software engineer. I graduated from the University of Washington in
-            2020 with a B.S. in chemistry and a minor in math. I fell in love with programming while working in a
-            computational chemistry research group at UW. I am passionate about building products that simplify peoples
-            lives. In my free time I enjoy working on{' '}
+            &nbsp;&nbsp;&nbsp;&nbsp; I'm Luke Hatcher, a software engineer. I graduated from the University of
+            Washington in 2020 with a B.S. in chemistry and a minor in math. I fell in love with programming while
+            working in a computational chemistry research group at UW. I am passionate about building products that
+            simplify peoples lives. In my free time I enjoy working on{' '}
             <TBLink href="https://github.com/lukehatcher/thoughtBubble-monorepo">thoughtBubble</TBLink>, a productivity
             ecosystem for developers where they can sync their thoughts between their mobile devices and their code
             editors. My current programming interests revolve around TypeScript, C# and the occasional Python. Feel free
