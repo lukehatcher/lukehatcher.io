@@ -45,36 +45,29 @@ const HeaderContainer = styled.div`
 `;
 
 const HeaderText = styled.h1`
-  font-size: 45px;
+  font-size: 42.5px;
 `;
 
 const ContentContainer = styled.div`
-  margin-top: 15vh;
-  padding-bottom: 80px; // footer height
+  padding-top: 80px;
+  margin-top: 80px;
+  margin-bottom: 80px; // footer height
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  /* align-items: center; */
+  /* justify-content: space-evenly; */
   /* border: 1px solid green; */
 `;
 
 const AboutBlurbContainer = styled.div`
-  margin-bottom: 75px;
+  margin-bottom: 50px; // ***********
   max-width: 680px;
   padding: 30px;
-  /* border: 1px solid red; */
+  /* border: 1px solid pink; */
 `;
 
-/* font-size: ${(props) => props.fontSize}px; */
 const BlurbContent = styled.p`
-  /* font-size: 16px; */
-  /* font-size: calc(0.5vw + 0.5vh + 0.5vmin); // first working one */
-  /* font-size: calc(0.5vw + 0.5vh + 0.6vmin); // first working one */
-  /* font-size: calc(13px + 0.7vmin); // latest */
-  /* font-size: calc(12px + 0.8vmin); */
-  /* font-size: calc(13px + 0.5vmin); */ // current
-  font-size: calc(13px + 0.7vmin);
-
+  font-size: calc(14px + 0.7vmin);
   line-height: 1.65;
   padding-left: 15px;
   padding-right: 15px;
@@ -83,16 +76,10 @@ const BlurbContent = styled.p`
 const RootIconContainer = styled.div<IconContainerProps>`
   display: flex;
   flex-direction: ${(props) => props.flexDirection};
+  /* border: 1px solid red; */
 `;
 
-const IconContainer1 = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-`;
-
-const IconContainer2 = styled.div`
+const IconContainer = styled.div`
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -177,7 +164,7 @@ const Index = () => {
           </BlurbContent>
         </AboutBlurbContainer>
         <RootIconContainer flexDirection={rootFlexDirection}>
-          <IconContainer1>
+          <IconContainer>
             <a href="https://github.com/lukehatcher" rel="noreferrer" target="_blank" title="GitHub Profile">
               <SiGithub size="85" color="#f5f6f7" />
             </a>
@@ -189,8 +176,8 @@ const Index = () => {
             >
               <SiLinkedin size="85" color="#f5f6f7" />
             </a>
-          </IconContainer1>
-          <IconContainer2>
+          </IconContainer>
+          <IconContainer>
             <a href="mailto:lukehatcher98@gmail.com" rel="noreferrer" target="_blank" title="Gmail">
               <SiGmail size="85" color="#f5f6f7" />
             </a>
@@ -201,7 +188,7 @@ const Index = () => {
             >
               <FaFileAlt size="85" color="#f5f6f7" />
             </a>
-          </IconContainer2>
+          </IconContainer>
         </RootIconContainer>
       </ContentContainer>
       <FooterContainer>
