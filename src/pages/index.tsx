@@ -45,16 +45,16 @@ const PageContainer = styled.div`
 `;
 
 const ContentContainer = styled.div`
-  padding-top: 80px;
+  padding-top: 7.5vh;
   margin-bottom: 80px; // footer height
   display: flex;
   flex-direction: column;
 `;
 
 const AboutBlurbContainer = styled.div`
-  margin-bottom: 50px; // xxxxxx
+  margin-bottom: 7.5vh; // xxxxxx
   max-width: 680px;
-  padding: 30px;
+  padding: 25px;
   /* border: 1px solid pink; */
 `;
 
@@ -103,7 +103,6 @@ const FooterText = styled.p`
 
 const Index = () => {
   const [rootFlexDirection, setRootFlexDirection] = useState<directions>(directions.ROW);
-  const [_headerText, setHeaderText] = useState<string>('');
 
   const throttle = (fxn: (...args: any[]) => void, timeout: number = 200) => {
     let wait = false;
@@ -133,19 +132,6 @@ const Index = () => {
     window.addEventListener('resize', throttle(handleResize));
   }, []);
 
-  useEffect(() => {
-    let i = 1;
-    const name = 'Luke Hatcher';
-    const typeWriter = () => {
-      if (i === name.length + 1) {
-        clearInterval(intervalId);
-      }
-      setHeaderText(name.slice(0, i));
-      i++;
-    };
-    const intervalId = setInterval(typeWriter, 45);
-  }, []);
-
   return (
     <PageContainer>
       <Helmet>
@@ -161,7 +147,7 @@ const Index = () => {
             Washington in 2020 with a B.S. in chemistry and a minor in math. I fell in love with programming while
             working in a computational chemistry research group at UW. I am passionate about building products that
             simplify peoples lives. In my free time I enjoy working on{' '}
-            <TBLink href="https://github.com/lukehatcher/thoughtBubble-monorepo">thoughtBubble</TBLink>, a productivity
+            <TBLink href="https://github.com/lukehatcher/thoughtBubble-monorepo">ThoughtBubble</TBLink>, a productivity
             ecosystem for developers where they can sync their thoughts between their mobile devices and their code
             editors. My current programming interests revolve around TypeScript, C# and the occasional Python. Feel free
             to get in touch!
