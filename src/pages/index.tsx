@@ -8,6 +8,11 @@ import { FaFileAlt } from '@react-icons/all-files/fa/FaFileAlt';
 import '@fontsource/inter';
 import '../styles/index.css';
 
+// update resume on s3
+// update description
+// link lukehatcher.io
+// update url to lukehatcher instead of lukehatcherio
+
 enum directions {
   ROW = 'row',
   COLUMN = 'column',

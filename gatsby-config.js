@@ -8,10 +8,10 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'Gatsby + Node.js (TypeScript) API',
-        short_name: 'Gatsby + Node.js (TypeScript)',
+        name: 'Luke Hatcher"s personal website',
+        short_name: 'Luke hatcher',
         start_url: '/',
-        icon: 'src/images/gatsby-icon.png',
+        icon: 'src/images/favicon-32x32.png',
       },
     },
   ],
