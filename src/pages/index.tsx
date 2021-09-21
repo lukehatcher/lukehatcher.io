@@ -40,6 +40,10 @@ const HeaderContainer = styled.div`
   text-align: center;
 `;
 
+const HeaderText = styled.h1`
+  font-size: 45px;
+`;
+
 const ContentContainer = styled.div`
   margin-top: 15vh;
   padding-bottom: 80px; // footer height
@@ -67,7 +71,6 @@ const BlurbContent = styled.p`
 const RootIconContainer = styled.div<IconContainerProps>`
   display: flex;
   flex-direction: ${(props) => props.flexDirection};
-  padding: 15px;
 `;
 
 const IconContainer1 = styled.div<IconContainerProps>`
@@ -106,6 +109,8 @@ const Index = () => {
   const [rootFlexDirection, setRootFlexDirection] = useState<directions>(directions.ROW);
   const [flexDirection, setFlexDirection] = useState<directions>(directions.ROW);
 
+  const [headerText, setHeaderText] = useState<string>('');
+
   const throttle = (fxn: (...args: any[]) => void, timeout: number = 200) => {
     let wait = false;
     return (...args: any) => {
@@ -136,14 +141,19 @@ const Index = () => {
   return (
     <PageContainer>
       <Helmet>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale = 1.0, 
+maximum-scale=1.0, user-scalable=no"
+        />
         <title>Luke Hatcher</title>
       </Helmet>
       <HeaderContainer>
-        <h1>Luke Hatcher</h1>
+        <HeaderText>Luke Hatcher</HeaderText>
       </HeaderContainer>
       <ContentContainer>
         <AboutBlurbContainer>
-          <p>Hi,</p>
+          <BlurbContent>Hi,</BlurbContent>
           <br />
           <BlurbContent>
             &nbsp;&nbsp;&nbsp;&nbsp; I'm Luke, a software engineer. I graduated from the University of Washington in
@@ -157,7 +167,7 @@ const Index = () => {
         <RootIconContainer flexDirection={rootFlexDirection}>
           <IconContainer1 flexDirection={flexDirection}>
             <a href="https://github.com/lukehatcher" rel="noreferrer" target="_blank" title="GitHub Profile">
-              <SiGithub size="85" />
+              <SiGithub size="85" color="#f5f6f7" />
             </a>
             <a
               href="https://www.linkedin.com/in/lukehatcher98/"
@@ -165,19 +175,19 @@ const Index = () => {
               target="_blank"
               title="LinkIn Profile"
             >
-              <SiLinkedin size="85" />
+              <SiLinkedin size="85" color="#f5f6f7" />
             </a>
           </IconContainer1>
           <IconContainer2 flexDirection={flexDirection}>
             <a href="mailto:lukehatcher98@gmail.com" rel="noreferrer" target="_blank" title="Gmail">
-              <SiGmail size="85" />
+              <SiGmail size="85" color="#f5f6f7" />
             </a>
             <a
               href="https://luke-resume.s3-us-west-2.amazonaws.com/lukeHatcher-resume.pdf"
               target="_blank"
               title="Resume"
             >
-              <FaFileAlt size="85" />
+              <FaFileAlt size="85" color="#f5f6f7" />
             </a>
           </IconContainer2>
         </RootIconContainer>
