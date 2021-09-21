@@ -68,9 +68,11 @@ const AboutBlurbContainer = styled.div`
 /* font-size: ${(props) => props.fontSize}px; */
 const BlurbContent = styled.p`
   /* font-size: 16px; */
-  /* font-size: calc(0.5vw + 0.5vh + 0.5vmin); */
-  /* font-size: calc(13px + 0.7vmin); */
-  font-size: calc(13px + 0.7vmin);
+  /* font-size: calc(0.5vw + 0.5vh + 0.5vmin); // first working one */
+  /* font-size: calc(0.5vw + 0.5vh + 0.6vmin); // first working one */
+  /* font-size: calc(13px + 0.7vmin); // latest */
+  /* font-size: calc(12px + 0.8vmin); */
+  font-size: calc(13px + 0.5vmin);
 
   line-height: 1.65;
   padding-left: 15px;
