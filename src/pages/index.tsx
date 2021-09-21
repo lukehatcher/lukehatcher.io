@@ -66,7 +66,7 @@ const AboutBlurbContainer = styled.div`
 `;
 
 const BlurbContent = styled.p<BlurbProps>`
-  font-size: 1.25em;
+  /* font-size: 16; */
   /* font-size: ${(props) => props.fontSize}px; */
   line-height: 1.65;
   padding-left: 15px;
@@ -132,7 +132,7 @@ const Index = () => {
     if (window.innerWidth < 960) {
       // 960, 680
       setRootFlexDirection(directions.COLUMN);
-      setBlurbFont(14);
+      setBlurbFont(16);
     } else {
       setRootFlexDirection(directions.ROW);
       setBlurbFont(16);
