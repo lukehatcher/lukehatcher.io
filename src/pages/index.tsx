@@ -16,6 +16,10 @@ interface IconContainerProps {
   flexDirection: string;
 }
 
+interface BlurbProps {
+  fontSize: number;
+}
+
 const PageContainer = styled.div`
   min-height: 100vh; // ========
   position: relative; // ========
@@ -51,18 +55,19 @@ const ContentContainer = styled.div`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* border: 1px solid green; */
+  border: 1px solid green;
 `;
 
 const AboutBlurbContainer = styled.div`
   margin-bottom: 75px;
   max-width: 680px;
   padding: 30px;
-  /* border: 1px solid red; */
+  border: 1px solid red;
 `;
 
-const BlurbContent = styled.p`
-  font-size: 16px;
+const BlurbContent = styled.p<BlurbProps>`
+  /* font-size: 16px; */
+  font-size: ${(props) => props.fontSize}px;
   line-height: 1.65;
   padding-left: 15px;
   padding-right: 15px;
@@ -73,16 +78,16 @@ const RootIconContainer = styled.div<IconContainerProps>`
   flex-direction: ${(props) => props.flexDirection};
 `;
 
-const IconContainer1 = styled.div<IconContainerProps>`
+const IconContainer1 = styled.div`
   display: flex;
-  flex-direction: ${(props) => props.flexDirection};
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 `;
 
-const IconContainer2 = styled.div<IconContainerProps>`
+const IconContainer2 = styled.div`
   display: flex;
-  flex-direction: ${(props) => props.flexDirection};
+  flex-direction: row;
   align-items: center;
   justify-content: center;
 `;
@@ -107,9 +112,8 @@ const FooterText = styled.p`
 
 const Index = () => {
   const [rootFlexDirection, setRootFlexDirection] = useState<directions>(directions.ROW);
-  const [flexDirection, setFlexDirection] = useState<directions>(directions.ROW);
-
-  const [headerText, setHeaderText] = useState<string>('');
+  const [blurbFont, setBlurbFont] = useState<number>(16);
+  // const [headerText, setHeaderText] = useState<string>('');
 
   const throttle = (fxn: (...args: any[]) => void, timeout: number = 200) => {
     let wait = false;
@@ -125,11 +129,17 @@ const Index = () => {
   };
 
   const handleResize = () => {
-    if (window.innerWidth < 960) {
+    const width = window.innerWidth;
+    if (width < 960) {
       // 960, 680
       setRootFlexDirection(directions.COLUMN);
+      if (width < 400) {
+        //  console.log(width);
+        setBlurbFont(15);
+      }
     } else {
       setRootFlexDirection(directions.ROW);
+      setBlurbFont(16);
     }
   };
 
@@ -141,11 +151,7 @@ const Index = () => {
   return (
     <PageContainer>
       <Helmet>
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale = 1.0, 
-maximum-scale=1.0, user-scalable=no"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=no" />
         <title>Luke Hatcher</title>
       </Helmet>
       <HeaderContainer>
@@ -153,9 +159,9 @@ maximum-scale=1.0, user-scalable=no"
       </HeaderContainer>
       <ContentContainer>
         <AboutBlurbContainer>
-          <BlurbContent>Hi,</BlurbContent>
+          <BlurbContent fontSize={blurbFont}>Hi,</BlurbContent>
           <br />
-          <BlurbContent>
+          <BlurbContent fontSize={blurbFont}>
             &nbsp;&nbsp;&nbsp;&nbsp; I'm Luke, a software engineer. I graduated from the University of Washington in
             2020 with a B.S. in chemistry and a minor in math. I fell in love with programming while working in a
             computational chemistry research group at UW. I am passionate about building products that simplify peoples
@@ -165,7 +171,7 @@ maximum-scale=1.0, user-scalable=no"
           </BlurbContent>
         </AboutBlurbContainer>
         <RootIconContainer flexDirection={rootFlexDirection}>
-          <IconContainer1 flexDirection={flexDirection}>
+          <IconContainer1>
             <a href="https://github.com/lukehatcher" rel="noreferrer" target="_blank" title="GitHub Profile">
               <SiGithub size="85" color="#f5f6f7" />
             </a>
@@ -178,7 +184,7 @@ maximum-scale=1.0, user-scalable=no"
               <SiLinkedin size="85" color="#f5f6f7" />
             </a>
           </IconContainer1>
-          <IconContainer2 flexDirection={flexDirection}>
+          <IconContainer2>
             <a href="mailto:lukehatcher98@gmail.com" rel="noreferrer" target="_blank" title="Gmail">
               <SiGmail size="85" color="#f5f6f7" />
             </a>
