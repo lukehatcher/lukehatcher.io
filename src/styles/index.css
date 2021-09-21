@@ -8,24 +8,6 @@
   background: transparent;
 }
 
-/* @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
-  p {
-    font-size: 14px;
-  }
-} */
-
-@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
-  p {
-    font-size: 14px;
-  }
-}
-
-@media only screen and (device-width: 844px) and (device-height: 390px) and (-webkit-device-pixel-ratio: 3) {
-  p {
-    font-size: 14px;
-  }
-}
-
 a:visited,
 a:focus,
 a:active {
@@ -34,6 +16,12 @@ a:active {
 }
 
 /* === end of CSS reset === */
+
+@media only screen and (device-width: 390px) and (device-height: 844px) and (-webkit-device-pixel-ratio: 3) {
+  p {
+    font-size: 14px;
+  }
+}
 
 html {
   background-color: #18191a;

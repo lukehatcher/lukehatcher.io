@@ -65,9 +65,9 @@ const AboutBlurbContainer = styled.div`
   /* border: 1px solid red; */
 `;
 
-const BlurbContent = styled.p<BlurbProps>`
-  /* font-size: 16; */
-  /* font-size: ${(props) => props.fontSize}px; */
+/* font-size: ${(props) => props.fontSize}px; */
+const BlurbContent = styled.p`
+  font-size: 16;
   line-height: 1.65;
   padding-left: 15px;
   padding-right: 15px;
@@ -112,7 +112,7 @@ const FooterText = styled.p`
 
 const Index = () => {
   const [rootFlexDirection, setRootFlexDirection] = useState<directions>(directions.ROW);
-  const [blurbFont, setBlurbFont] = useState<number>(16);
+  // const [blurbFont, setBlurbFont] = useState<number>(16);
   // const [headerText, setHeaderText] = useState<string>('');
 
   const throttle = (fxn: (...args: any[]) => void, timeout: number = 200) => {
@@ -129,13 +129,16 @@ const Index = () => {
   };
 
   const handleResize = () => {
+    console.log(window.innerWidth);
     if (window.innerWidth < 960) {
       // 960, 680
       setRootFlexDirection(directions.COLUMN);
-      setBlurbFont(16);
+      // if (window.innerWidth < 680) {
+      //   setBlurbFont(14);
+      // }
     } else {
       setRootFlexDirection(directions.ROW);
-      setBlurbFont(16);
+      // setBlurbFont(16);
     }
   };
 
@@ -155,9 +158,9 @@ const Index = () => {
       </HeaderContainer>
       <ContentContainer>
         <AboutBlurbContainer>
-          <BlurbContent fontSize={blurbFont}>Hi,</BlurbContent>
+          <BlurbContent>Hi,</BlurbContent>
           <br />
-          <BlurbContent fontSize={blurbFont}>
+          <BlurbContent>
             &nbsp;&nbsp;&nbsp;&nbsp; I'm Luke, a software engineer. I graduated from the University of Washington in
             2020 with a B.S. in chemistry and a minor in math. I fell in love with programming while working in a
             computational chemistry research group at UW. I am passionate about building products that simplify peoples
