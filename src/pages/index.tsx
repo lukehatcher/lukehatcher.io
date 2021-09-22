@@ -97,7 +97,7 @@ const IconContainer = styled.div`
   -moz-backface-visibility: hidden;
   background: transparent;
   background-color: transparent;
-  margin-right: 50px; // $$$$$$
+  margin-right: 50px; // $$$$$$ space in middle
 `;
 
 const FooterContainer = styled.div`
@@ -170,36 +170,28 @@ const Index = () => {
         </AboutBlurbContainer>
         <RootIconContainer flexDirection={rootFlexDirection}>
           <IconContainer>
-            <a
-              href="https://github.com/lukehatcher"
-              className="icon"
-              rel="noreferrer"
-              target="_blank"
-              title="GitHub Profile"
-            >
-              <SiGithub size="85" color="#f5f6f7" />
+            <a href="https://github.com/lukehatcher" rel="noreferrer" target="_blank" title="GitHub Profile">
+              <SiGithub className="icon" size="85" color="#f5f6f7" />
             </a>
             <a
               href="https://www.linkedin.com/in/lukehatcher98/"
-              className="icon"
               rel="noreferrer"
               target="_blank"
               title="LinkIn Profile"
             >
-              <SiLinkedin size="85" color="#f5f6f7" />
+              <SiLinkedin className="icon" size="85" color="#f5f6f7" />
             </a>
           </IconContainer>
           <IconContainer>
-            <a href="mailto:lukehatcher98@gmail.com" className="icon" rel="noreferrer" target="_blank" title="Gmail">
-              <SiGmail size="85" color="#f5f6f7" />
+            <a href="mailto:lukehatcher98@gmail.com" rel="noreferrer" target="_blank" title="Gmail">
+              <SiGmail className="icon" size="85" color="#f5f6f7" />
             </a>
             <a
               href="https://luke-resume.s3.us-west-2.amazonaws.com/resume_luke_hatcher.pdf"
-              className="icon"
               target="_blank"
               title="Resume"
             >
-              <FaFileAlt size="85" color="#f5f6f7" />
+              <FaFileAlt className="icon" size="85" color="#f5f6f7" />
             </a>
           </IconContainer>
         </RootIconContainer>
