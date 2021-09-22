@@ -24,12 +24,9 @@ a:active {
 .icon {
   padding: 50px;
   transition: all 0.2s ease-in-out;
-  /* backface-visibility: hidden;
+  backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden; */
-  /* backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden; */
+  -moz-backface-visibility: hidden;
 }
 
 .icon:hover {

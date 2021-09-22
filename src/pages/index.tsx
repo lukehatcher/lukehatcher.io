@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { SiLinkedin } from '@react-icons/all-files/si/SiLinkedin';
@@ -133,7 +133,7 @@ const Index = () => {
     }
   };
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     handleResize();
     window.addEventListener('resize', throttle(handleResize));
   }, []);
