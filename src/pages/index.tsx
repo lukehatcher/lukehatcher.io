@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useLayoutEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
 import styled from 'styled-components';
 import { SiLinkedin } from '@react-icons/all-files/si/SiLinkedin';
@@ -75,8 +75,9 @@ const RootIconContainer = styled.div<IconContainerProps>`
   display: flex;
   flex-direction: ${(props) => props.flexDirection};
   margin-bottom: 50px; // xxxxxx
-  background: transparent;
-  background-color: transparent;
+  /* background: transparent; */
+  /* background-color: transparent; */
+  border: 1px solid green;
 `;
 
 const IconContainer = styled.div`
@@ -121,7 +122,6 @@ const Index = () => {
   };
 
   const handleResize = () => {
-    console.log(window.innerWidth);
     if (window.innerWidth < 960) {
       // 960, 680
       setRootFlexDirection(directions.COLUMN);
@@ -130,7 +130,7 @@ const Index = () => {
     }
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     handleResize();
     window.addEventListener('resize', throttle(handleResize));
   }, []);
