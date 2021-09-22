@@ -79,8 +79,8 @@ const RootIconContainer = styled.div<IconContainerProps>`
   display: flex;
   flex-direction: ${(props) => props.flexDirection};
   margin-bottom: 50px; // xxxxxx
-  /* background: transparent; */
-  /* background-color: transparent; */
+  background: transparent;
+  background-color: transparent;
   /* border: 1px solid green; */
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -95,6 +95,8 @@ const IconContainer = styled.div`
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
   -moz-backface-visibility: hidden;
+  background: transparent;
+  background-color: transparent;
 `;
 
 const FooterContainer = styled.div`
