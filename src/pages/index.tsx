@@ -97,6 +97,7 @@ const IconContainer = styled.div`
   -moz-backface-visibility: hidden;
   background: transparent;
   background-color: transparent;
+  margin-right: 50px; // $$$$$$
 `;
 
 const FooterContainer = styled.div`
