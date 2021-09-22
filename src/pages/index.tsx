@@ -1,140 +1,29 @@
 import React, { useEffect, useState } from 'react';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
 import { SiLinkedin } from '@react-icons/all-files/si/SiLinkedin';
 import { SiGithub } from '@react-icons/all-files/si/SiGithub';
 import { SiGmail } from '@react-icons/all-files/si/SiGmail';
 import { FaFileAlt } from '@react-icons/all-files/fa/FaFileAlt';
 import '@fontsource/inter';
 import '../styles/index.css';
-
-enum directions {
-  ROW = 'row',
-  COLUMN = 'column',
-}
-
-interface IconContainerProps {
-  flexDirection: string;
-}
-
-const PageContainer = styled.div`
-  min-height: 100vh; // ========
-  position: relative; // ========
-  display: flex;
-  flex-direction: column;
-  box-sizing: border-box;
-  font-family: Inter, SF Pro Text, SF Pro Icons, Helvetica Neue, Helvetica, Arial, sans-serif;
-  color: #f5f6f7;
-  /* justify-content: center; */
-  align-items: center;
-  background-image: linear-gradient(
-    to right bottom,
-    #83111a,
-    #730f34,
-    #5a1c42,
-    #3d2344,
-    #262439,
-    #22253c,
-    #1d2640,
-    #162743,
-    #182b5c,
-    #2a2c73,
-    #482685,
-    #6c0f90
-  );
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-`;
-
-const ContentContainer = styled.div`
-  padding-top: 7.5vh;
-  margin-bottom: 80px; // footer height
-  display: flex;
-  flex-direction: column;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-`;
-
-const AboutBlurbContainer = styled.div`
-  margin-bottom: 7.5vh; // xxxxxx
-  max-width: 680px;
-  padding: 25px;
-  /* border: 1px solid pink; */
-`;
-
-const BlurbContent = styled.p`
-  font-size: calc(14px + 0.7vmin);
-  line-height: 1.65;
-  padding-left: 15px;
-  padding-right: 15px;
-`;
-
-const TBLink = styled.a`
-  color: #f5f6f7;
-`;
-
-const RootIconContainer = styled.div<IconContainerProps>`
-  display: flex;
-  flex-direction: ${(props) => props.flexDirection};
-  margin-bottom: 50px; // xxxxxx
-  background: transparent;
-  background-color: transparent;
-  /* border: 1px solid green; */
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-`;
-
-const IconContainer = styled.div`
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-  -moz-backface-visibility: hidden;
-  background: transparent;
-  background-color: transparent;
-  margin-right: 50px; // $$$$$$ space in middle
-`;
-
-const FooterContainer = styled.div`
-  position: absolute;
-  display: flex;
-  flex-direction: column;
-  bottom: 0;
-  width: 100vw;
-  height: 80px; // footer height
-  /* background-color: #1c1e21; */
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-`;
-
-const FooterText = styled.p`
-  font-size: 14px;
-  margin-top: 5px;
-`;
+import { throttle, openNewTab } from '../utils';
+import { directions } from '../types';
+import {
+  AboutBlurbContainer,
+  BlurbContent,
+  ContentContainer,
+  FooterContainer,
+  FooterText,
+  IconContainer,
+  PageContainer,
+  RootIconContainer,
+  TBLink,
+} from '../components';
 
 const Index = () => {
   const [rootFlexDirection, setRootFlexDirection] = useState<directions>(directions.ROW);
 
-  const throttle = (fxn: (...args: any[]) => void, timeout: number = 200) => {
-    let wait = false;
-    return (...args: any) => {
-      if (!wait) {
-        fxn(...args);
-        wait = true;
-        setTimeout(() => {
-          wait = false;
-        }, timeout);
-      }
-    };
-  };
-
-  const handleResize = () => {
+  const handleScreenResize = (): void => {
     if (window.innerWidth < 960) {
       setRootFlexDirection(directions.COLUMN);
     } else {
@@ -143,8 +32,8 @@ const Index = () => {
   };
 
   useEffect(() => {
-    handleResize();
-    window.addEventListener('resize', throttle(handleResize));
+    handleScreenResize();
+    window.addEventListener('resize', throttle(handleScreenResize));
   }, []);
 
   return (
@@ -170,29 +59,32 @@ const Index = () => {
         </AboutBlurbContainer>
         <RootIconContainer flexDirection={rootFlexDirection}>
           <IconContainer>
-            <a href="https://github.com/lukehatcher" rel="noreferrer" target="_blank" title="GitHub Profile">
-              <SiGithub className="icon" size="85" color="#f5f6f7" />
-            </a>
-            <a
-              href="https://www.linkedin.com/in/lukehatcher98/"
-              rel="noreferrer"
-              target="_blank"
-              title="LinkIn Profile"
-            >
-              <SiLinkedin className="icon" size="85" color="#f5f6f7" />
-            </a>
+            <SiGithub
+              className="icon"
+              size="85"
+              color="#f5f6f7"
+              onClick={() => openNewTab('https://github.com/lukehatcher')}
+            />
+            <SiLinkedin
+              className="icon"
+              size="85"
+              color="#f5f6f7"
+              onClick={() => openNewTab('https://www.linkedin.com/in/lukehatcher98/')}
+            />
           </IconContainer>
           <IconContainer>
-            <a href="mailto:lukehatcher98@gmail.com" rel="noreferrer" target="_blank" title="Gmail">
-              <SiGmail className="icon" size="85" color="#f5f6f7" />
-            </a>
-            <a
-              href="https://luke-resume.s3.us-west-2.amazonaws.com/resume_luke_hatcher.pdf"
-              target="_blank"
-              title="Resume"
-            >
-              <FaFileAlt className="icon" size="85" color="#f5f6f7" />
-            </a>
+            <SiGmail
+              className="icon"
+              size="85"
+              color="#f5f6f7"
+              onClick={() => openNewTab('mailto:lukehatcher98@gmail.com')}
+            />
+            <FaFileAlt
+              className="icon"
+              size="85"
+              color="#f5f6f7"
+              onClick={() => openNewTab('https://luke-resume.s3.us-west-2.amazonaws.com/resume_luke_hatcher.pdf')}
+            />
           </IconContainer>
         </RootIconContainer>
       </ContentContainer>
