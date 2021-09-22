@@ -8,8 +8,6 @@ import { FaFileAlt } from '@react-icons/all-files/fa/FaFileAlt';
 import '@fontsource/inter';
 import '../styles/index.css';
 
-// update resume on s3
-
 enum directions {
   ROW = 'row',
   COLUMN = 'column',
@@ -70,14 +68,17 @@ const BlurbContent = styled.p`
 const TBLink = styled.a`
   color: #f5f6f7;
 `;
-// showing black
+
 const RootIconContainer = styled.div<IconContainerProps>`
   display: flex;
   flex-direction: ${(props) => props.flexDirection};
   margin-bottom: 50px; // xxxxxx
   /* background: transparent; */
   /* background-color: transparent; */
-  border: 1px solid green;
+  /* border: 1px solid green; */
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 `;
 
 const IconContainer = styled.div`
@@ -123,7 +124,6 @@ const Index = () => {
 
   const handleResize = () => {
     if (window.innerWidth < 960) {
-      // 960, 680
       setRootFlexDirection(directions.COLUMN);
     } else {
       setRootFlexDirection(directions.ROW);

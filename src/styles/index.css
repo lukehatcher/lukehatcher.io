@@ -21,13 +21,12 @@ a:active {
   color: #f5f6f7;
 }
 
-/* html {
-  background-color: #18191a;
-} */
-
 .icon {
   padding: 50px;
-  /* transition: all 0.2s ease-in-out; */
+  transition: all 0.2s ease-in-out;
+  /* backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden; */
 }
 
 .icon:hover {
