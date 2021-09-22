@@ -86,6 +86,9 @@ const IconContainer = styled.div`
   flex-direction: row;
   align-items: center;
   justify-content: center;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 `;
 
 const FooterContainer = styled.div`
