@@ -9,9 +9,6 @@ import '@fontsource/inter';
 import '../styles/index.css';
 
 // update resume on s3
-// update description
-// link lukehatcher.io
-// update url to lukehatcher instead of lukehatcherio
 
 enum directions {
   ROW = 'row',
@@ -77,7 +74,6 @@ const TBLink = styled.a`
 const RootIconContainer = styled.div<IconContainerProps>`
   display: flex;
   flex-direction: ${(props) => props.flexDirection};
-  /* border: 1px solid red; */
   margin-bottom: 50px; // xxxxxx
 `;
 
@@ -184,7 +180,7 @@ const Index = () => {
               <SiGmail size="85" color="#f5f6f7" />
             </a>
             <a
-              href="https://luke-resume.s3-us-west-2.amazonaws.com/lukeHatcher-resume.pdf"
+              href="https://luke-resume.s3.us-west-2.amazonaws.com/resume_luke_hatcher.pdf"
               className="icon"
               target="_blank"
               title="Resume"
