@@ -42,6 +42,9 @@ const PageContainer = styled.div`
     #482685,
     #6c0f90
   );
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 `;
 
 const ContentContainer = styled.div`
@@ -49,6 +52,9 @@ const ContentContainer = styled.div`
   margin-bottom: 80px; // footer height
   display: flex;
   flex-direction: column;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
 `;
 
 const AboutBlurbContainer = styled.div`
