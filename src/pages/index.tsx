@@ -70,11 +70,13 @@ const BlurbContent = styled.p`
 const TBLink = styled.a`
   color: #f5f6f7;
 `;
-
+// showing black
 const RootIconContainer = styled.div<IconContainerProps>`
   display: flex;
   flex-direction: ${(props) => props.flexDirection};
   margin-bottom: 50px; // xxxxxx
+  background: transparent;
+  background-color: transparent;
 `;
 
 const IconContainer = styled.div`
@@ -150,8 +152,8 @@ const Index = () => {
             simplify peoples lives. In my free time I enjoy working on{' '}
             <TBLink href="https://github.com/lukehatcher/thoughtBubble-monorepo">ThoughtBubble</TBLink>, a productivity
             ecosystem for developers where they can sync their thoughts between their mobile devices and their code
-            editors. My current programming interests revolve around TypeScript, C# and the occasional Python. Feel free
-            to get in touch!
+            editors. My current programming interests revolve around TypeScript, C# and some occasional Python. Feel
+            free to get in touch!
           </BlurbContent>
         </AboutBlurbContainer>
         <RootIconContainer flexDirection={rootFlexDirection}>
