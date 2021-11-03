@@ -17,11 +17,3 @@ export const openNewTab = (url: string): void => {
     newTab.focus();
   }
 };
-
-// export const handleScreenResize = (fxn): void => {
-// 	if (window.innerWidth < 960) {
-// 		setRootFlexDirection(directions.COLUMN);
-// 	} else {
-// 		setRootFlexDirection(directions.ROW);
-// 	}
-// };

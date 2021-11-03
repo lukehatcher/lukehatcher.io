@@ -21,6 +21,7 @@ import {
 } from '../components';
 
 const Index = () => {
+  const offWhite = '#f5f6f7';
   const [rootFlexDirection, setRootFlexDirection] = useState<directions>(directions.ROW);
 
   const handleScreenResize = (): void => {
@@ -62,13 +63,13 @@ const Index = () => {
             <SiGithub
               className="icon"
               size="85"
-              color="#f5f6f7"
+              color={offWhite}
               onClick={() => openNewTab('https://github.com/lukehatcher')}
             />
             <SiLinkedin
               className="icon"
               size="85"
-              color="#f5f6f7"
+              color={offWhite}
               onClick={() => openNewTab('https://www.linkedin.com/in/lukehatcher98/')}
             />
           </IconContainer>
@@ -76,13 +77,13 @@ const Index = () => {
             <SiGmail
               className="icon"
               size="85"
-              color="#f5f6f7"
+              color={offWhite}
               onClick={() => openNewTab('mailto:lukehatcher98@gmail.com')}
             />
             <FaFileAlt
               className="icon"
               size="85"
-              color="#f5f6f7"
+              color={offWhite}
               onClick={() => openNewTab('https://luke-resume.s3.us-west-2.amazonaws.com/resume_luke_hatcher.pdf')}
             />
           </IconContainer>
