@@ -40,7 +40,7 @@ const Index = () => {
   return (
     <PageContainer>
       <Helmet htmlAttributes={{ lang: 'en' }}>
-        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=1.0, user-scalable=1.0" />
+        <meta name="viewport" content="width=device-width, initial-scale = 1.0, maximum-scale=5.0, user-scalable=1.0" />
         <meta name="description" content="Luke Hatcher's personal website" />
         <meta name="keywords" content="Luke Hatcher, Luke, Hatcher, software engineering, software development" />
         <meta name="author" content="Luke Hatcher" />
