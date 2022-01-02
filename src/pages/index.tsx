@@ -93,7 +93,7 @@ const Index = () => {
         </RootIconContainer>
       </ContentContainer>
       <FooterContainer>
-        <FooterText>© Copyright 2021, Luke Hatcher</FooterText>
+        <FooterText>{`© Copyright ${new Date().getFullYear()}, Luke Hatcher`}</FooterText>
         <FooterText>📍 Seattle, WA</FooterText>
       </FooterContainer>
     </PageContainer>
